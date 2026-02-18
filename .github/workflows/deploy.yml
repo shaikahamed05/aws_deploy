@@ -1,4 +1,4 @@
-name: Deploy First APP to Windows Server
+name: Deploy First APP to Windows Server 2019
 
 on:
   push:
