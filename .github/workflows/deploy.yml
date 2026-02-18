@@ -1,0 +1,22 @@
+name: Deploy First APP to Windows Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Copy project to Windows Server
+      run: |
+        sshpass -p "${{ secrets.WIN_PASS }}" scp \
+        -P ${{ secrets.WIN_PORT }} \
+        -o StrictHostKeyChecking=no \
+        -r . \
+        ${{ secrets.WIN_USER }}@${{ secrets.WIN_HOST }}:C:/Users/Administrator/Documents
