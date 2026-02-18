@@ -19,4 +19,4 @@ jobs:
         -P ${{ secrets.WIN_PORT }} \
         -o StrictHostKeyChecking=no \
         -r . \
-        ${{ secrets.WIN_USER }}@${{ secrets.WIN_HOST }}:C:/Users/Administrator/Documents
+        ${{ secrets.WIN_USER }}@${{ secrets.WIN_HOST }}:C:/Users/Administrator/Documents/firstApp
